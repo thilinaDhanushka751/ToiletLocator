@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <!-- Map Fragment (takes up a portion of the layout) -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true" />
+
+    <!-- EditText for Address -->
+    <EditText
+        android:id="@+id/text_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map"
+        android:layout_marginTop="25dp"
+        android:hint="Address"
+        android:textColorHint="@color/light_gray"
+        android:textColor="@color/black"
+        />
+
+    <!-- EditText for Name -->
+    <EditText
+        android:id="@+id/text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_address"
+        android:layout_marginTop="25dp"
+        android:hint="Name"
+        android:textColorHint="@color/light_gray"
+        android:textColor="@color/black"
+
+        />
+
+    <!-- RatingBar -->
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:numStars="5"
+        android:rating="0"
+        android:progressBackgroundTint="@color/gray"
+        android:progressTint="@color/gold"
+        />
+
+    <!-- Button to Add Toilet -->
+    <Button
+        android:id="@+id/add_toilet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rounded_button"
+        android:text="ADD TOILET" />
+
+    <!-- BottomNavigationView for navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:itemBackground="@drawable/gradient"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/menu_navigation" />
+
+</RelativeLayout>
